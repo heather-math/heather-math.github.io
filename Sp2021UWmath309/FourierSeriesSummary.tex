@@ -1,0 +1,81 @@
+\documentclass[a4paper]{article}
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{graphicx}
+\usepackage{pdfsync}
+
+\newtheorem{theorem}{Theorem}[section] 
+\newtheorem{lemma}[theorem]{Lemma} 
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\DeclareMathOperator{\Real}{Re }
+\DeclareMathOperator{\Imag}{Im }
+
+
+
+\usepackage{geometry}\geometry{margin=1.2in}
+\numberwithin{equation}{section}
+
+\renewcommand{\baselinestretch}{1.18}
+\begin{document}
+
+\begin{center}
+\large \textbf{Fourier Series Summary}
+\end{center}
+Disclaimer: this quick summary is not a comprehensive list of everything you need to know about Fourier series.  See lecture notes for more comprehensive information.
+\normalsize
+
+\begin{enumerate}
+	\item Consider the vector space $L^2([-L, L])$ with the inner product given by 
+\[\langle f,g\rangle =\int_{-L}^L f(x)g(x)dx.\]
+Consider the set 
+\[\mathcal B= \left\{1,\ \cos \frac{\pi x}{L},\  \sin \frac{\pi x}{L},\  \cos \frac{2\pi x}{L},\  \sin \frac{2\pi x}{L},\  \cos \frac{3\pi x}{L} ,\  \sin \frac{3\pi x}{L}, \ldots\right\}.\] 
+  \item (Orthogonality) Functions in the above set are pairwise orthogonal with respect to the above inner product.  We have 
+\[\int_{-L}^L \sin \frac{m\pi x}{L}\cos \frac{n\pi x}{L}dx=0,\]
+\[\int_{-L}^L \sin \frac{m\pi x}{L}\sin \frac{n\pi x}{L}dx =\left\{ \begin{array}{ll} 0, & \ \ \ m\neq n, \\ L, & \ \ \  m=n,\end{array} \right.\]
+\[\int_{-L}^L \cos \frac{m\pi x}{L}\cos \frac{n\pi x}{L}dx =\left\{ \begin{array}{ll} 0, & \ \ \ m\neq n, \\ L, & \ \ \  m=n\neq 0, \\ 2L, & \ \ \ m=n=0.\end{array} \right.\]
+
+
+\item (Completeness) If $f\in L^2([-L, L])$, then its Fourier series, which is given by 
+\[\frac{a_0}{2}+\sum_{n=1}^\infty\left\{a_n\cos \frac{n\pi x}{L}+b_n\sin \frac{n\pi x}{L}\right\},\]
+	where
+	\[a_n= \frac{1}{L}\int_{-L}^L f(x)\cos \frac{n\pi x}{L}dx, \ \ \  n= 0,1,2,\ldots,\]
+	\[b_n=\frac{1}{L}\int_{-L}^L f(x)\sin \frac{n\pi x}{L}dx, \ \ \  n= 1,2,3\ldots,\]
+ converges to $f(x)$ with respect to the $L^2$-norm.   In addition,
+	
+	\[\frac{a_0^2}{2}+\sum_{n=1}^\infty(a_n^2+b_n^2)= \frac{1}{L}\int_{-L}^{L} f^2(x)dx=\frac{1}{L}||f||^2\quad \text{ (Parseval's identity)}.\]
+	
+\item (Pointwise and uniform convergence theorems)
+If $f\in PS([-L,L])$, i.e. $f$, $f'$ are piecewise continuous with finitely many discontinuities at which the left and right limits exists and are finite, then the Fourier series converges pointwise to $f(x)$ at all points where $f(x)$ is continuous.  At a discontinuity $x_0$, it converges to the midpoint of the jump, i.e. $\frac{1}{2}\left(\lim_{x\to x_0^-} f(x)+\lim_{x\to x_0^+}f(x)\right).$\\
+
+If $f\in PS([-L, L])$ and $f$ is continuous, then the Fourier series converges uniformly, and we can integrate its Fourier series term by term.  If $f\in PS([-L, L])$ and $f''$ is also piecewise continuous, then we can differentiate its Fourier series term by term.
+
+\item (Fourier cosine series)  For $f: [0,L]\to \mathbb R$, its Fourier cosine series is
+	\[f=\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos \left(\frac{n\pi x}{L}\right),\]
+	where
+			\[a_n=\frac{2}{L}\int_{0}^L f(x)	\cos \left(\frac{n\pi x}{L}\right)dx,\quad {n=0,1,2,3,\ldots}\]	
+			
+\item (Fourier sine series)  For $f:[0,L]\to \mathbb R$, its Fourier sine series is
+				\[f=\sum_{n=1}^\infty b_n\sin \left(\frac{n\pi x}{L}\right),\]
+			where
+			\[b_{n}=\frac{2}{L}\int_{0}^L f(x)	\sin \left(\frac{n\pi x}{L}\right)dx.\quad {n=1,2,3,\ldots} \]	
+			
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document} 

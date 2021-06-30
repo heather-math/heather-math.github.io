@@ -1,0 +1,688 @@
+<html><head>
+
+
+
+
+<style>
+body{  
+    margin: 0; 
+    padding: 30px 30px 30px 30px;
+}
+#text{
+	margin: 10px 0;	
+    padding: 10px 0px 0px 15px;
+	width:900px;
+}
+
+#link_bar ul{
+	text-align: center;
+    font-weight: bolder;
+	font-size: 1.25em;
+}
+#link_bar a:link,
+#link_bar a:visited{
+	color: #003b98;
+    margin-left: 14px;
+    margin-right: 16px;
+	text-decoration: none;
+    background-color: transparent;
+}
+#link_bar a:hover,
+#link_bar a:focus,
+#link_bar a:active{
+    color: #000000;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+#link_bar strong{
+    color: #000000;
+	    font: inherit;
+}
+#link_bar li{
+	margin-left:0px;
+	margin-right:0px;
+	display: inline;
+}
+
+ul{
+    margin: 0;
+}
+#newspaper-c
+{
+    /*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;*/
+    /*font-size: 14px;*/
+    margin: 45px;
+    width: 800px;
+    text-align: left;
+    border-collapse: collapse;
+    /*border: 1px solid #6cf;*/
+    border: 1px solid gray;
+}
+#newspaper-c th
+{
+    padding: 20px;
+    font-weight: normal;
+    font-size: 13px;
+    /*color: #039;*/
+    text-transform: uppercase;
+    border-right: 1px solid #0865c2;
+    border-top: 1px solid #0865c2;
+    border-left: 1px solid #0865c2;
+    border-bottom: 1px solid #fff;
+}
+#newspaper-c td.odd
+{
+    padding: 5px 10px;
+    /*color: #669;*/
+    color:black;
+    /*border-right: 1px dashed #6cf;*/
+    border-right:none;
+    font-weight:bold;
+}
+#newspaper-c td
+{
+    padding: 5px 10px;
+    /*color: #669;*/
+    color: black;
+    /*border-right: 1px dashed #6cf;*/
+    border-right: 1px dashed gray;
+}
+
+
+
+</style>
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+<base href="https://www.dropbox.com/sh/4zlcqpqj8qiairq/AACmWSFZoHXUCaGAjyUjY3C7a?dl=0/"/>
+
+<title>Math 309 Spring 2021 </title></head><body>
+
+
+
+<center> <h2>  <font color = "#008000"> Math 309 - Sections E & F - Spring 2021 - Linear Analysis </font>  </h2>
+
+
+
+
+<table id="newspaper-c" >
+
+<tr>
+        <td class="odd">Contents </td>
+        <td> Systems of linear differential equations, Fourier series, and boundary value problems.
+        </td>
+	</tr>
+
+    <tr>
+        
+        <td class="odd"> Instructor </td>
+        <td> <a href="https://math.washington.edu/people/heather-lee" target="_blank">Heather Lee</a> (heath<!--despam-->m<!-- -->l&#x40;<!--
+-->uw.edu ) </td>
+    </tr>
+    
+
+
+    <tr>
+        <td class="odd">Lecture time</td>
+        <td> MWF 10:30-11:20am (for Section E), 11:30am-12:20pm (for Section F).  Zoom link posted on Canvas. </td>
+	</tr>
+    <tr>
+        <td class="odd">Office hours</td>
+        <td> Monday 5-6:30pm, Tuesday 1-2pm, and Friday 12:30-1pm.  Use the Office Hour Zoom link posted on Canvas.  Email me to make an appointment if you need to talk to me without other students present. </td>
+	</tr>
+	    <tr>
+        <td class="odd">Grading </td>
+        <td> 45% homework, 20% midterm exam, 35% final exam.
+        </td>     
+	</tr>
+	
+	    <tr>
+        <td class="odd">  </td>
+        <td>
+        Grading will not be curved, so as to eliminate competition between students. The grading standard will be set after I have looked at all the homeworks/exams and their rubrics carefully in order to determine a fair standard based on my judgement of their difficulties. <br><br>
+         Getting 60% in all three categories, homework, midterm, and final, automatically guarantees a pass (2.0); though the actual standard for passing might be lower. </td> 
+	</tr>	
+	 <tr>
+        <td class="odd">Gradescope </td>
+        <td> <a href="https://www.gradescope.com" target="_blank">www.gradescope.com</a>; also accessible via Canvas. </td>
+	</tr>	
+	<tr>
+        <td class="odd">Piazza </td>
+        <td> <a href="https://piazza.com/" target="_blank">piazza.com</a>; also accessible via Canvas.   </td>
+	</tr>
+	
+	<tr>
+        <td class="odd">Some registration dates </td>
+        <td> Last day of the unrestricted drop period (Apr 11) <br> 
+             See the academic calendar for detailed dates on <a href="https://www.washington.edu/students/reg/2021cal.html#Q6" target="_blank">add/withdrawl</a> <br>
+             Information on <a href="https://registrar.washington.edu/students/ec-grading-change-request/" target="_blank">Extraordinary Circumstances Quarter (ECQ) Late Grading Options</a> (Spring 2021 counts as an ECQ)
+             </td>
+	</tr>
+</table>
+
+<div id="link_bar"> <ul> <li> <a href="#homeworks">Homeworks</a> | </li>  <li> <a href="#exams">Exams</a> | </li>   <li><a href="#lectures">Lectures </a> |</li> <li><a href="#resources">Other Resources</a> |</li> <li> <a href=
+"#accommodations">Special Accommodations</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </li>
+ </ul> </div>
+ </center>
+
+
+<hr>
+
+<h2><font color = "#008000"> Homeworks <a name="homeworks"> </a>
+</font> </h2>
+Weekly assignments are generally due on Tuesday at 11:59pm, though there will be a few exceptions.  I will post the problems about one week in advance on this webpage, and the exact same set of problems will also posted at the same time on Gradescope.  You will be submitting your solutions on Gradescope following <a href="uploadinstruction.html" target="_blank">THIS INSTRUCTION</a>.
+Late homeworks will not be accepted unless you have extenuating circumstances, see the <a href="#accommodations">special accommodations</a> section.  
+ <br><br>
+
+In a given homework with N problems, I might select anywhere in the range of 0-N problem(s) for the grader to grade.  You will not know which problems I would select before that homework is due.  I will post solutions to all problems in Canvas after the due date.  <br><br>
+
+What's covered in lecture should provide you enough tools to tackle these homework problems, but if you notice that the some homework problems are much harder than the basic examples presented in lectures or asking you to explore territories not completely covered in lectures, know that this is intentional as homework is a very important part of the learning process.  Please always feel free to ask me for help when you are stuck.  <br><br>
+
+<b> Solutions should be presented using complete sentences, with grammatically correct English, that combine both words and precise mathematical expressions to articulate your line of reasoning.</b>  You don't need to feel extremely stressed out about English grammar, but your solution should show that you've put in a good effort as the ability to communicate your ideas clearly is a good skill to acquire no matter what your major is.  Also, one good indicator of whether you've understood your solution properly is whether you are able to explain it to others.  In your first draft of the solution, don't be afraid of writing down something that's wrong or something that could be right but you can't fully explain, but it does mean that you definitely need to think about it more until you are able to explain what you wrote.  <br><br>
+
+<b> Collaboration on homework is encouraged, but you need to write up the solutions in your own words that reflect your own understanding of the material.</b>  Simply copying other people's solutions would be doing yourself a disservice as well as compromising your academic integrity.  <br><br>
+
+
+<b> Do NOT post the following problem sets  anywhere else on the internet. </b><br>
+
+
+<b>Homework 0 (Due Tuesday, Mar 30, 9pm)</b>
+<ul>
+Homework 0 (total 2pts) is just a survey.  Please complete it by the Mar 30; the late due date of Apr 13 you see on Gradescope is there to accomodate students who registered late for this class.
+<br> 
+</ul>
+
+
+<b><a href="hw1.pdf" target="_blank">Homework 1</a> (Due Tuesday, Apr 6, 11:59pm)</b>
+<ul> Problems 1-6 are mostly a review of your prerequisite linear algebra knowledge and can be done before the start of this course.  Problem 7 is doable after L3.  Problems 8 is doable after L4. 
+</ul>
+
+<b><a href="hw2.pdf" target="_blank">Homework 2</a> (Due Tuesday, Apr 13, 11:59pm)</b>
+<ul>This homework appears scarily long, but most of it is just for you to read. A couple of these might get followup questions in future homeworks.  Problem 4 is doable after L3,  problems 2, 3, 5, 6 should all be doable after L4 and the beginning of L5, problem 7 is doable after L6. 
+
+</ul>
+
+<b><a href="hw3.pdf" target="_blank">Homework 3</a> (Due Tuesday, Apr 20, 11:59pm)</b>
+<ul>Problem 1 doesn't need any special knowledge from this class.  Problems 2a,3a 4abc, 5ab,6a are doable after L7.  Problems 2, 3, 4d are doable after L9.  The rest of the problems, i.e. 4e, 5cd, 6bc are doable after L10.
+</ul>
+
+<b><a href="hw4.pdf" target="_blank">Homework 4</a> (Due Tuesday, Apr 27, 11:59pm)</b>
+<ul>Problem 1 is doable after L10.  Problem 2 doesn't need any special knowledge from this class.  Problems 3a, 4ab, 5a, 6a are doable after L11.  Problem 3bc is doable after L12.  The rest of the problems, i.e. 4c, 5b, 6b are doable after L13.
+</ul>
+
+<b><a href="hw5.pdf" target="_blank">Homework 5</a> (Due <font color="#FF0000">Monday, May 3</font>, 11:59pm)  <font color="#FF0000">Note the special exam week Monday due date.</font> </b>
+<ul>Problem 1 is doable after L12.  Problem 2 is doable after you finish doing HW4 Problem 3 (but it might be helpful to wait I read through this problem with you in L14).  Problems 3ac and 4ac are doable after L14.  The rest, i.e. problems 3bd and 4bd are doable after L15.  
+</ul>
+
+<b><a href="hw6.pdf" target="_blank">Homework 6</a> (Due Tuesday, May 18, 11:59pm)  </b>
+<ul> Problem 1 is doable after L3, L4.  Problem 2 is doable after L8. Problem 3 is doable after L17.  Problems 4 and 5 are doable after L18.  Problems 6, 7a is doable after L19.  Problems 7bc are doable after L20.  
+</ul>
+
+<b><a href="hw7.pdf" target="_blank">Homework 7</a> (Due Tuesday, May 25, 11:59pm)  </b>
+<ul> Problem 1 is doable after L17.  Problem 2 is doable after L22.  Problems 5 and 6 are doable after L23.  Problems 3 and 4 are doable after L24. 
+</ul>
+
+<b><a href="hw8.pdf" target="_blank">Homework 8</a> (Due <font color="#FF0000">Friday, June 4</font>, 11:59pm)  </b>
+<ul> Problem 5 doesn't require any special knowledge.  Problem 4 is doable after L23/24.  Problems 1 and 2 are doable after L25.  Problem 3 is doable after L26.
+</ul>
+
+
+
+
+
+
+<h2><font color = "#008000"> Exams <a name="exams"> </a>
+</font> </h2>
+
+Exams will be submitted on Gradescope. The exam will appear on Gradescope exactly at the starting time of the exam. The Gradescope format and the submission procedure for the exam will be exactly the same as that for the homework. Please leave yourself plenty of time for the submission process.  <br><br>
+
+I will be checking my email during the exam time, so if you have any questions or if you experience any technical problems with the Gradescope submission, send me an email immediately, and you should get a response in real time (though there could be a tiny wait if many students are emailing me at the same time).  <br><br>
+
+Due to the time pressure during exams, I will not require you to write solutions in complete sentences for exams, unlike the homeworks.  <br><br>
+
+<b>Allowed materials during the exam:</b> you are allowed to use only scientific (no graphing) calculators (though I will design the exam so all the numbers on the exam should be computable by hand and it won't really be advantageous to have a calculator).  Prior to the exam, you can write down a set of review notes (no page limit) to use during the exam.  It cannot just be the entire lecture notes you took during class (or printed outs of them); it has to be something you write during the review process.  No books and absolutely nothing online. <br><br>
+
+
+<a href="pastExams" target="_blank">Past Exam Archive</a>: past exams are NOT(!!) good indicators for what future exams will look like, though they are nonetheless useful practice (don't worry about doing all of them, just look at a couple).<br><br>
+
+
+
+
+<h2><font color = "#008000"> Lectures <a name="lectures"> </a>
+</font> </h2>
+ 
+<b>The textbook</b> referenced is Boyce and DiPrima's Elementary Differential Equations and Boundary Value Problems (mostly Chapters 7 and 10).  Getting a textbook is recommended but optional.  The most important thing is to keep up with the lectures and not fall behind.  
+<ul>
+<li>  You can access an electronic version of this textbook on Canvas, starting from Mar 29 and free of charge until Apr 19, then it will cost $25.  You must pay before Apr 19, after that you can no longer purchase the e-book.   Use <a href="https://www.ubookstore.com/SC-Linear-Analysis-11e-19-Student-Choice-eBook-Perpetual-Access" target="_blank">this U-Bookstore link</a> for making the purchase (this link won't be activated until Mar 29).  <br>
+
+After you make the purchase, first access it via the link on Canvas.  Once you've used that link on the Canvas page, the e-book will go on your VitalSource bookshelf.  You can read the book online, via Canvas or by directly logging into <a href="http://bookshelf.vitalsource.com/" target="_blank">VitalSource Bookshelf</a>.  Or once you make the purchase, you can download and use the VitalSource reader. You can print up to 10 pages at a time as well. The downloaded version doesn't expire.
+</li>
+<li>If you prefer a paper version, any edition of  Elementary Differential Equations and Boundary Value Problems by Boyce and Diprima will do. Older versions are cheaper.  <br><br>
+</li>
+</ul>
+It is essential that you attend the lectures, not just read the notes.  Recording of the lecture will be posted on Panopto afterwards (which are restricted to registered students and can be accessed from Canvas). I strongly recommend that you attend the real-time lectures and pay attention during them so you can ask questions and keep up with the pace of the class.  Occasional minor mistakes/typos in the lectures are corrected in the notes after class, so make sure you check the notes that are posted here. <br><br>
+
+Screenshots or recordings of other students during active video participation sessions are strictly forbidden. Any student caught engaging in this behavior will be reported to the Student Conduct Office. <br><br>
+
+
+ (Exam dates are set in stone, but other plans for future dates below are tentative.)
+ <table border="1" cellpadding="2"> <tr style="font-weight: bold; background:
+ #ffe5b4"><td> No.&Date </td><td>Topics and Comments</td> <td> Notes&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp</td></tr>
+ 
+
+<tr>
+<td>L1 <br> Mon <br> Mar 29</td>
+
+<td>
+<font color="#008000">Topic:</font> <ul> Logistics <br> Math 307/308 review </ul>
+</td> 
+<td rowspan="2"> <a href="Review307.pdf" target="_blank">307 review</a> <br>  <br><a href="worksheet.pdf" target="_blank">Worksheet</a> <br> 
+<br><a href="worksheetSoln.pdf" target="_blank">Worksheet Solution</a> 
+</td>
+</tr>
+ 
+<tr>
+<td>L2<br> Wed <br> Mar 31 </td>
+<td>
+<font color="#008000">Topic:</font> Math 308 review<br>
+<font color="#008000">Textbook:</font> 7.2, 7.3<br>
+</td>
+
+</td> 
+</tr>
+
+<tr>
+<td>L3<br> Fri <br> Apr 2</td>
+<td>
+<font color="#008000">Topic:</font> <ul> linear algebra review <br>  Intro. to system of linear differential equations </ul>
+<font color="#008000">Textbook:</font> 7.1, 7.4<br>
+
+</td> 
+<td rowspan="2">
+<a href="03-04aIntro.pdf" target="_blank">Notes</a><br> for L3, L4(part a) <br><br> <a href="04bIntro.pdf" target="_blank">Notes</a><br> for L4(part b)
+</td>
+
+</tr>
+
+<tr>
+<td>L4<br> Mon <br> Apr 5</td>
+<td>
+<font color="#008000">Topic:</font> Intro. to systems of linear differential equations cont'd<br>
+<font color="#008000">Textbook:</font> 7.1, 7.4<br>
+
+
+</td> 
+
+</tr>
+
+<tr>
+<td>L5<br> Wed <br> Apr 7</td>
+<td>
+<font color="#008000">Topic:</font> Euler's method<br>
+<font color="#008000">Textbook:</font> 8.1<br>
+<font color="#008000">Additional Resource:</font>  Page 5 of <a href="http://faculty.washington.edu/heathml/307/01-03Introduction.pdf" target="_blank">this lecture note</a> I wrote when teaching Math 307 has an example of Euler's method for a single first order equation.  
+</td> 
+<td rowspan="2"><a href="05-06aEuler.pdf" target="_blank">Notes</a> <br><br><a href="euler.jl" target="_blank">euler.jl</a> <br><br>
+
+
+The version below has that one extra plot of thetaL:<br>
+<a href="eulerLecture.jl" target="_blank">eulerLecture.jl</a><br>
+Sample plots:<br>
+<a href="fig1.png" target="_blank">Plot1</a>(h=0.1, N=100, not accurate enough)<br>
+<a href="fig2.png" target="_blank">Plot2</a>(h=0.01, N=1000)<br>
+<a href="fig3.png" target="_blank">Plot3</a>(h=0.01, N=10000)<br>
+
+
+
+
+</td>
+
+</tr>
+
+<tr>
+<td>L6<br> Fri <br> Apr 9</td>
+<td>
+<font color="#008000">Topic:</font>  Euler's method cont'd <br> 
+
+</td> 
+
+
+
+</tr>
+
+
+
+
+<tr>
+<td>L7<br> Mon <br> Apr 12</td>
+<td>
+<font color="#008000">Topic:</font> Homogeneous 1st order systems with constant coefficients: diagonalizable matrix cont'd <br>
+<font color="#008000">Textbook:</font> 7.5, 7.7<br>
+</td> 
+<td rowspan="4"><a href="07-10.pdf" target="_blank">Notes</a> 
+
+</td>
+</tr>
+
+<tr>
+<td>L8<br> Wed <br> Apr 14 </td>
+<td>
+<font color="#008000">Topic:</font> Phase portraits for solutions of x'=Ax when A is diagonalizable with real eigenvalues <br>
+<font color="#008000">Textbook:</font> 7.5<br>
+
+</td> 
+
+</tr>
+
+<tr>
+<td>L9<br> Fri <br> Apr 16</td>
+<td>
+<font color="#008000">Topic:</font> Phase portraits for solutions of x'=Ax when A is diagonalizable with real eigenvalues  <br>
+<font color="#008000">Textbook:</font> 7.5<br>
+
+</td> 
+
+</tr>
+
+<tr>
+<td>L10<br> Mon  <br> Apr 19 </td>
+<td>
+<font color="#008000">Topic:</font> <ul> Phase portraits for solutions of x'=Ax when A is diagonalizable with real eigenvalues cont'd<br>
+<font color="#008000">Textbook:</font> 7.6<br>
+
+</td> 
+
+</tr>
+
+<tr>
+<td>L11<br> Wed <br> Apr 21</td>
+<td>
+<font color="#008000">Topic:</font> Homogeneous 1st order system with constant coefficients: diagonalizable matrix with complex eigenvalues	<br>
+<font color="#008000">Textbook:</font> 7.6<br>
+
+</td> 
+<td rowspan="3"><a href="11-13.pdf" target="_blank">Notes</a> 
+
+</tr>
+
+<tr>
+<td>L12<br> Fri  <br> Apr 23</td>
+<td>
+<font color="#008000">Topic:</font> Homogeneous 1st order system with constant coefficients: diagonalizable matrix with complex eigenvalues cont'd<br> 	
+<font color="#008000">Textbook:</font> 7.6<br>
+
+</td> 
+
+</tr>
+
+<tr>
+<td>L13<br> Mon <br> Apr 26</td>
+<td>
+<font color="#008000">Topic:</font>Homogeneous 1st order system with constant coefficients: diagonalizable matrix with complex eigenvalues cont'd<br>  
+<font color="#008000">Textbook:</font> 7.6<br>
+
+</td>
+</tr>
+
+<tr>
+<td>L14<br> Wed <br> Apr 28</td>
+<td>
+<font color="#008000">Topic:</font>  Homogeneous 1st order system with constant coefficients: non-diagonalizable matrix <br>
+<font color="#008000">Textbook:</font> 7.8<br>
+</td> 
+<td rowspan="2"><a href="14-15.pdf" target="_blank">Notes</a> 
+
+
+</tr>
+
+<tr>
+<td>L15<br> Fri  <br> Apr 30</td>
+<td> <font color="#008000">Topic:</font> Homogeneous 1st order system with constant coefficients: non-diagonalizable matrix<br>
+<font color="#008000">Textbook:</font> 7.8<br>
+</td> 
+
+</tr>
+
+
+
+<tr>
+<td>L16<br> Mon  <br> May 3</td>
+
+<td> Midterm review </td> 
+
+</tr>
+
+
+
+<tr>
+<td>  Wed <br> May 5 </td>
+
+<td> Midterm exam during class time
+</td> 
+</tr>
+
+<tr>
+<td>  L17<br> Fri  <br> May 7</td>
+<td> <font color="#008000">Topic:</font>  <ul> x'=Ax where A is an nxn matrix <br> Fourier series </ul>
+<font color="#008000">Textbook:</font> 10.2-10.4<br>
+</td> 
+<td rowspan="5">
+<a href="Nondiagonal3x3ex.pdf" target="_blank">Notes</a><br> (3x3 nondiagonalizable examples)<br><br>
+
+<a href="17b-21aFourierSeries.pdf" target="_blank">Notes</a><br> for L17(part 2), L18, L19, L20, L21(part 1)<br><br>
+
+<a href="https://www.desmos.com/calculator/bkgypbe6c6" target="_blank">Graph</a> of the <br> partial sums for ex3 in L20<br><br>
+
+<a href="21b-22aFourierHalfInterval.pdf" target="_blank">Notes</a><br> for L21(part 2), L22(part 1)<br><br>
+
+<a href="FourierSeriesSummary.pdf" target="_blank">Fourier Series summary</a><br><br>
+
+
+
+</tr>
+
+
+<tr>
+<td>  L18 <br> Mon <br> May 10</td>
+<td>  <font color="#008000">Topic:</font> Fourier series <br>
+<font color="#008000">Textbook:</font> 10.2-10.4<br>
+</td> 
+</tr>
+
+<tr>
+<td>  L19 <br> Wed <br> May 12</td>
+<td>  <font color="#008000">Topic:</font> Fourier series <br>
+<font color="#008000">Textbook:</font> 10.2-10.4<br>
+<font color="#008000">Extra links:</font> A series of videos introducing Michelson's Fourier machine, a mechanical device computing the Fourier series:
+<a href="https://https://www.youtube.com/watch?v=NAsM30MAHLg&ab_channel=engineerguy" target="_blank">video 1</a>, 
+<a href="https://www.youtube.com/watch?v=8KmVDxkia_w&ab_channel=engineerguy" target="_blank">video 2</a>,
+ <a href="https://www.youtube.com/watch?v=6dW6VYXp9HM&ab_channel=engineerguy" target="_blank">video 3</a>, 
+<a href="https://www.youtube.com/watch?v=jfH-NbsmvD4&ab_channel=engineerguy" target="_blank">video 4</a>.
+
+</td> 
+</tr>
+
+<tr>
+<td>  L20 <br> Fri <br> May 14</td>
+<td>  <font color="#008000">Topic:</font> Fourier series <br>
+<font color="#008000">Textbook:</font> 10.2-10.4<br>
+</td> 
+</tr>
+
+<tr>
+<td>  L21 <br> Mon <br> May 17</td>
+<td>  <font color="#008000">Topic:</font> <ul> Fourier series <br>  Half interval Fourier series </ul>
+<font color="#008000">Textbook:</font> 10.4<br>
+</td> 
+</tr>
+
+<tr>
+<td>  L22 <br> Wed <br> May 19</td>
+<td>  <font color="#008000">Topic:</font> <ul>  Half interval Fourier series cont'd <br> Fourier transforms  </ul>
+<font color="#008000">Textbook:</font> 10.4
+<td rowspan="4"> See above for notes on L22(part 1) <br><br>
+<a href="22b-23aFourierTransform.pdf" target="_blank">Notes</a> <br>for L22(part 2), L23(part 1) <br><br>
+
+<a href="23b-25heatEqn.pdf" target="_blank">Notes</a> for<br> L23(part 2), L24, L25 <br><br>
+
+<a href="HeatEquationSummary.pdf" target="_blank">Summary</a> of heat equation with homogeneous boundary conditions
+
+</td>
+
+
+</tr>
+
+
+
+
+<tr>
+<td>  L23<br> Fri  <br> May 21</td>
+
+<td> <font color="#008000">Topic:</font>  <ul> Fourier transforms <br> The heat equation </ul>
+<font color="#008000">Textbook:</font> 10.5<br>
+</td> 
+
+</td> 
+
+</tr>
+<tr>
+<td>  L24 <br> Mon <br> May 24</td>
+
+<td> <font color="#008000">Topic:</font> The heat equation <br>
+<font color="#008000">Textbook:</font> 10.1, 10.5
+
+
+</td> 
+
+
+</tr>
+</tr>
+<tr>
+<td>  L25 <br> Wed <br> May 26</td>
+
+<td> <font color="#008000">Topic:</font> The heat equation <br>
+<font color="#008000">Textbook:</font> 10.5
+
+</td> 
+
+
+</tr>
+
+
+
+<tr>
+<td>  L26 <br> Fri <br> Mar 28 </td>
+<td> <font color="#008000">Topic:</font>  The heat equation <br>
+<font color="#008000">Textbook:</font> 10.5, 10.6  <br>
+</td> 
+<td rowspan="2"> <a href="26aheatNonhomog.pdf" target="_blank">Notes</a> for<br> L26(part 1) <br><br>
+<a href="26b-27aheatIntro.pdf" target="_blank">Notes</a> for<br> L26(part 2), L27(part 1) <br><br>
+<a href="L27b.pdf" target="_blank">Notes</a> for<br>L27(part 2) 
+
+</td>
+</tr>
+
+<tr>
+<td>  L27 <br> Wed <br> Jun 2 </td>
+<td> <font color="#008000">Topic:</font> <ul> heat equation, wave equation, Laplace equation </ul>
+</td> 
+
+</tr>
+
+<tr>
+<td>  L28 <br> Fri <br> Jun 4 </td>
+<td> <font color="#008000">Topic:</font> Final exam review <br>
+</td>
+
+
+</tr>
+
+
+
+
+
+
+
+<tr>
+<td>  </td>
+<td> Final Exam: any 1hr50min (i.e. 110min) block during the time period of Mon Jun 7, 8:30am to Wed Jun 9, 4:30pm.  I will be checking emails in real-time during Monday 8:30-10:20am and Wednesday 2:30-4:20pm. 
+</td> 
+
+</tr>
+
+ 
+
+ 
+ </table>
+
+
+
+
+
+<h2><font color = ``228B22''> Other Resources <a name="resources"> </a></font> </h2>
+<li> <a href="https://academicsupport.uw.edu/clue/" target="_blank">UW CLUE</a> is a space for students to connect and get support.  They have tutors who are knowledgable in the content of Math 309.  All are free of charge. <br><br></li>
+
+<li><a href="https://www.desmos.com/"target="_blank">Desmos</a>: a very nice online graphing calculator.<br><br> </li>
+
+<li> My <a href="https://faculty.washington.edu/heathml/307/"target="_blank">lectures and notes for Math 307</a>.<br><br> </li>
+
+
+<li> Julia: 
+
+<ul> 
+<ul>
+<li>  Download the latest stable version at <a href="https://julialang.org/"target="_blank">https://julialang.org/</a>.
+</li>
+
+<li> Follow <a href="http://highorder.berkeley.edu/Julia_Installation_Instructions/julia_install_windows.html"target="_blank">this instruction</a>, written by Per-Olof Persson, for installing Julia, running the initial tests, installing additional packages (for starters, install "PyPlot", "DifferentialEquations", "Juno", and "PyCall", and you can always install additional ones later when needed), and optionally for installing Atom and Juno.  This instruction is written for PC Windows, but it's similar for MacOS.
+</li>
+<li> <a href="https://robertsweeneyblanco.github.io/Programming_for_Mathematical_Applications/home.html"target="_blank">Programming for Mathematical Applications</a> is a very accessible  set of lecture notes, mainly based on Julia. I would recommend that you at least try out Section 1.1 on Julia as a calculator. (If you are looking at the homepage for these notes, ignore any mentions of the cloud based Julia server based on Jupyter Notebooks.)
+</li>
+
+</ul>
+</ul>
+</li>
+
+
+<h2><font color = ``228B22''> Special Accommodations <a name="accommodations"> </a></font> </h2>
+<b>Homework: </b>
+<ul>Note that because you have a whole week to complete the homework, you should start the homework early, and submit each problem as you finish them.  Late homeworks will not be accepted unless you have an extenuating circumstance, which needs to be decided on a case-by-case bases. You must email me to discuss it <b>as early as possible  (1 hour before the due time at the latest)</b>; if you were in an emergency situation and couldn't contact me in advance, then message me as soon as you are able to do so.  If you are not sure whether your case counts as an extenuating circumstance, you don't need to be the one making that judgement call, just feel free to simply message me (the earlier the better) and I can decide.  <br><br> 
+
+  If you are experiencing any difficulty with any aspect of the class, whether it's the homework, lecture, time management, or other things, you should let me know as early as possible during the week, so I can hopeful be of some help in getting you to complete the homework on time.  Finishing the homework in a timely fashion is very important as it is hard for you to catch up once you fall behind (plus late homework poses difficulty for the grader and the timely release of the solutions to students).   <br><br>
+</ul>
+
+<b> Exams: </b>
+<ul>If you want to take the exam at a slightly different time, e.g. in case of observance of religious holidays, participation in university sponsored activities, or time zone conflicts in case you currently don't live in the US,
+please make arrangements with me <b> at least 1 week in advance </b>.  <br><br>
+
+If you have to miss an exam and want to take a make-up exam at a much later date, you will need a very compelling excuse, e.g. serious illness or serious family emergencies.  In this case, please contact me 
+<b>at least a day before the exam</b>; if you were in an emergency situation and couldn't contact me in advance, then message me as soon as you are able to do so. It'll cost me a significant amount of time to write a brand new make-up exam, plus potentially being unfair to the students who are taking the exam on the scheduled date, so a make up exam can only be granted for serious reasons.  <br><br>
+</ul>
+
+<b> Illness: </b>
+<ul> If you are requesting accommodation due to illness, you don't need to share any details that you are not comfortable with sharing about your illness with me, and you do NOT need to show me any doctors' notes or medical documents.  To be fair to other students though, please be honest and do not fake an illness to get out of a deadline.   <br><br>
+</ul>
+
+
+<b>Disability accommodation: </b> 
+<ul>You need to send the request through the <a href="https://depts.washington.edu/uwdrs/" target="_blank">UW DRS</a>. <br><br>
+</ul>
+
+<b>Religious accommodations:</b>
+<ul>In accordance with Washington State law, UW has developed a policy for accommodation of student absences or significant hardship due to reasons of faith or conscience, or for organized religious activities.  The UW's policy, including more information about how to request an accommodation, can be found on <a href="http://registrar.washington.edu/students/religious-accommodations-request/" target="_blank">THIS PAGE</a>.  Note that for the Spring 2021 quarter, this has to be done by <b>Friday, Apr 9, 5pm</b>.
+</ul>
+
+
+</body> 
+</html>

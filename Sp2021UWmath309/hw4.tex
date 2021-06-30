@@ -1,0 +1,210 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amscd, amssymb, amsthm}
+% \usepackage{diagrams}
+\usepackage{color}
+\usepackage{graphicx, psfrag, tikz}
+\usepackage[all]{xy}
+\usepackage[margin=1.1in]{geometry}
+
+\usepackage{enumitem,kantlipsum}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc,patterns,angles,quotes}
+%\renewcommand{\baselinestretch}{1.17}
+\usepackage{chemformula}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma} 
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\begin{document}
+\begin{center}
+\textbf{Math 309 Homework 4}\\
+(6 problems)
+\end{center}
+\vspace{0.15in}
+
+
+\begin{enumerate}[leftmargin=*]
+
+\item  Consider the following system 
+\[
+x'=\left[
+\begin{array}{cc}
+2 & 1\\
+4 & 2
+\end{array}\right]x.
+\]
+\begin{itemize}
+\item [(a)] Find the general solution of the above system.   
+\item [(b)] Draw a few trajectories of solutions in the $x_1$-$x_2$ plane. \\ 
+\end{itemize}
+
+
+
+\item Consider 
+\[
+A=\left[
+\begin{array}{cc}
+0 &1 \\
+-1& 0
+\end{array}\right].
+\]
+Then $
+\left[\begin{array}{c}
+1 \\
+\pm i
+\end{array}\right]$
+are eigenvectors of $A$ with eigenvalues $\pm i$.  So 
+\[
+e^{At}= P \left[
+\begin{array}{cc}
+e^{it} &0 \\
+0& e^{-it}
+\end{array}\right]P^{-1},
+\quad P=
+\left(
+\begin{array}{cc}
+1 &1 \\
+i & -i
+\end{array}\right).
+\]
+\begin{itemize}
+\item[(a)] Verify that 
+\[e^{At}=\left(
+\begin{array}{cc}
+\cos t &\sin t \\
+-\sin t&  \cos t
+\end{array}\right).
+\]
+\emph{Hint: according to Euler's formula, $\sin t= \frac{e^{it}-e^{-it}}{2i}$ and $\cos t=\frac{e^{it}+e^{-it}}{2}$.}
+
+\item[(b)] Compute $\det (e^{At})$, \ $e^{At}\left(\begin{array}{c}
+1 \\
+ 0
+\end{array}\right)$, and $e^{At}\left(\begin{array}{c}
+0 \\
+ 1
+\end{array}\right)$, and convince yourself that $e^{At}$ is a linear transformation that does clockwise rotation.  \\
+\end{itemize}
+
+\item (Pendulum, a continuation of HW1 \#8) In HW1 \#8 we discussed the linearization of the equation of motion for the pendulum when $\theta\approx 0$.  In that case, we found in HW1 \#8 (part c)  the system 
+\[
+\left[
+\begin{array}{c}
+\theta' \\
+\omega'
+\end{array}\right]= \left[
+\begin{array}{cc}
+0 &1 \\
+-\frac{g}{L}& 0
+\end{array}\right]\left[
+\begin{array}{c}
+\theta \\
+\omega
+\end{array}\right].
+\]
+
+\begin{itemize}
+
+\item[(a)] Express the general solution of the given system of equations in terms of real valued functions.
+
+\item[(b)] Now suppose $\frac{g}{L}=1$.    Suppose you are given the initial condition that $\theta(0)= 0.5$ and $\omega(0)=0$, draw the trajectory of the solution in the $\theta$-$\omega$ plane for all $t$.  Indicate the direction of flow.  Mark the point(s) on your trajectory where the bob of the pendulum reaches the lowest point.  And, mark the point(s) on your trajectory where the bob of the pendulum has velocity zero.
+
+\item[(c)] Now suppose keep $\frac{g}{L}=4$.  Again suppose you are given the initial condition that $\theta(0)= 0.5$ and $\omega(0)=0$, draw the trajectory of the solution in the $\theta$-$\omega$ plane for all $t$.  Indicate the direction of flow.  
+  
+\end{itemize}
+
+
+
+\item 
+\begin{itemize}
+\item[(a)] Express the general solution of the given system of equations in terms of real-valued functions.
+\[
+x'=\left(
+\begin{array}{cc}
+-1 & -4\\
+1 & -1
+\end{array}\right)x
+\]
+\item[(b)] Describe the behavior of the solutions as $t\to \infty$.
+\item[(c)] In the $x_1$-$x_2$ plane, sketch the trajectory of a solution $x(t)$ that passes through the point $\left[\begin{array}{c} 1\\ 0 \end{array}\right]$, for $t\in (-\infty, \infty)$.   Use an arrow to indicate the direction of flow.\\
+\end{itemize}
+
+
+
+
+\item 
+
+\begin{itemize}
+\item[(a)] Find the solution of the given initial value problem
+\[
+x'= \left(
+\begin{array}{cc}
+-4/5 &2 \\
+-1& 6/5
+\end{array}\right)x, \ \ 
+x(0)=
+ \left(
+\begin{array}{c}
+1 \\
+2
+\end{array}\right).
+\]
+Please write your solution in terms of real valued functions.
+\item[(b)] Draw the trajectory of the solution in the $x_1$-$x_2$ plane and describe the behavior of the solution as $t\to \infty$.  \\
+\end{itemize}
+
+
+\item Consider the system \[
+x'=\left[
+\begin{array}{cc}
+1 & 2\\
+-5 & -1
+\end{array}\right]x.
+\]
+You can use the fact that 
+\[
+v= \left[ \begin{array}{c} -2   \\  1-3i \end{array}\right]
+\]
+is an eigenvector with eigenvalue $\lambda=3i$.
+
+\begin{itemize}
+\item[(a)] Express the general solution of the given system of equations in terms of real-valued functions.
+
+\item[(b)] Now consider the solution given by
+\[
+\begin{array}{ll}
+\mathrm{Re}(e^{3it}v) & = \mathrm{Re}\Big(\big(\cos (3t)+i\sin (3t)\big) \big(v_R+ i v_I \big)\Big)\\
+ & = \cos(3t)v_R-\sin(3t)v_I,
+ \end{array}
+\]
+where $v=v_R+i v_I$ with $v_R=\left[ \begin{array}{c}   -2  \\ 1 \end{array}\right]$ and $v_I=\left[ \begin{array}{c} 0  \\  -3 \end{array}\right]$.  
+
+In a single $x_1$-$x_2$ plane, draw  the following objects
+\begin{itemize}
+\item a line that goes through the vector $v_R$;
+\item a line that goes through the vector $v_I$;
+\item the ellipse that is the trajectory of $\mathrm{Re}(e^{3it})$.
+\end{itemize}
+The ellipse above intersects each of the above two lines at two points, so there are a total of 4 intersection points.  Please label precisely the $(x_1, x_2)$-values of these intersection points.  Also provide all values of $t$ at which these intersection happen.  Note that there are infinitely many values of $t$ for each intersection point.  \\
+
+
+Note that those two lines above are not the axes of the ellipse because $v_R$ and $v_I$ are not perpendicular.  For this question, you are not required to figure out precisely what the axes of the ellipse are.\\
+
+
+\end{itemize}
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}

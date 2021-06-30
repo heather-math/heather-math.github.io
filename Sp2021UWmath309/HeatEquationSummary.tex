@@ -1,0 +1,111 @@
+\documentclass[a4paper]{article}
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{graphicx}
+\usepackage{pdfsync}
+
+\newtheorem{theorem}{Theorem}[section] 
+\newtheorem{lemma}[theorem]{Lemma} 
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\DeclareMathOperator{\Real}{Re }
+\DeclareMathOperator{\Imag}{Im }
+
+
+
+\usepackage{geometry}\geometry{margin=1.2in}
+\numberwithin{equation}{section}
+
+\renewcommand{\baselinestretch}{1.18}
+\begin{document}
+
+\begin{center}
+\large \textbf{Heat equations with homogeneous boundary conditions}
+\end{center}
+Disclaimer: this quick summary is not a comprehensive list of everything you need to know about the heat equations with homogeneous boundary conditions.  \\
+
+Let $u(x,t)$ be it temperature distribution; it satisfies the heat equation
+\[
+\frac{\partial u}{\partial t} =\alpha^2 \frac{\partial^2u}{\partial x^2}.
+\]
+To solve the heat equation, we use the method of separation of variables to represent the solution as a linear combination of separate solutions of the form $u(x,t)=w(t)v(x)$.   The heat equation implies that 
+\begin{align*}
+w'(t)=\alpha^2 \lambda w(t) & \quad  \Longrightarrow w(t)=ce^{\alpha^2\lambda t},\\
+v''(x)=\lambda v(x).\ \ &
+\end{align*}
+
+\begin{enumerate}
+	\item \textbf{(Dirichlet boundary condition: $u(0,t)=u(L,t)=0$.)} In this case $u(0,t)=v(0)w(t)=0$ and $u(L,t)=v(L)w(t)=0$, so $v(0)=v(L)=0$, and so we have the following eigenvalue problem 
+	\[
+	\begin{cases}
+	v''(x)=\lambda v(x), \\
+	v(0)=v(L)=0.
+	\end{cases}
+	\]
+After analyzing all three cases, $\lambda<0, \ \lambda=0,\ \lambda>0$ (see lecture 24, example 1), we arrive at the following list of eigenvalues and their corresponding eigenfunctions (note for each eigenvalue, we just list one eigenfunction, though any constant multiples of that function is also an eigenfunction):
+\[
+\lambda_n=-\frac{n^2\pi^2}{L^2},\quad v_n(x)=\sin \frac{n\pi x}{L}, \ \ n=1,2, 3,\ldots.
+\]
+So the collection of solutions of the form $u(x,t)=w(t)v(x)$ is
+\[
+\left\{ b_ne^{-\frac{\alpha^2n^2\pi^2t}{L^2}} \sin \frac{n\pi x}{L} , \  n=1,2, 3, \ldots \right\}.
+\]
+So the general solution to the boundary value problem 
+\[
+\begin{cases}
+\frac{\partial u}{\partial t} =\alpha^2 \frac{\partial^2u}{\partial x^2},\\
+u(0,t)=u(L,t)=0,
+\end{cases}
+\]
+is
+\[
+u(x,t)=\sum_{n=1}^\infty b_ne^{-\frac{\alpha^2n^2\pi^2t}{L^2}} \sin \frac{n\pi x}{L}.
+\]
+\vspace{0.2in}
+\item \textbf{(Neumann boundary condition: $\frac{\partial u}{\partial x}(0,t)=\frac{\partial u}{\partial x}(L,t)=0$.)} In this case $\frac{\partial u}{\partial x}(0,t)=w(t)\frac{dv}{dx}(0)=0$ and $\frac{\partial u}{\partial x}(L,t)=w(t) \frac{dv}{dx}(L)=0$, so $v'(0)=v'(L)=0$, and so we have the following eigenvalue problem 
+	\[
+	\begin{cases}
+	v''(x)=\lambda v(x), \\
+	v'(0)=v'(L)=0.
+	\end{cases}
+	\]
+After analyzing all three cases, $\lambda<0, \ \lambda=0,\ \lambda>0$ (see homework 8, problem 1), we arrive at the following list of eigenvalues and their corresponding eigenfunctions (note for each eigenvalue, we just list one eigenfunction, though any constant multiples of that function is also an eigenfunction):
+\[
+\lambda_n=-\frac{n^2\pi^2}{L^2},\quad v_n(x)=\cos \frac{n\pi x}{L}, \ \ n=0, 1,2, 3,\ldots.
+\]
+So the collection of solutions of the form $u(x,t)=w(t)v(x)$ is
+\[
+\left\{ a_ne^{-\frac{\alpha^2n^2\pi^2t}{L^2}} \cos \frac{n\pi x}{L} , \  n=0, 1,2, 3, \ldots \right\}.
+\]
+So the general solution to the boundary value problem 
+\[
+\begin{cases}
+\frac{\partial u}{\partial t} =\alpha^2 \frac{\partial^2u}{\partial x^2},\\
+\frac{\partial u}{\partial x}(0,t)=\frac{\partial u}{\partial x}(L,t)=0,
+\end{cases}
+\]
+is
+\begin{align*}
+u(x,t)& =\sum_{n=0}^\infty a_ne^{-\frac{\alpha^2n^2\pi^2t}{L^2}} \cos \frac{n\pi x}{L}\\
+& = a_0+\sum_{n=1}^\infty a_ne^{-\frac{\alpha^2n^2\pi^2t}{L^2}} \cos \frac{n\pi x}{L}.
+\end{align*}
+(Note the possible notation confusion: this $a_0$ is the $\frac{a_0}{2}$ in the Fourier cosine series.)
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document} 

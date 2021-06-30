@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amscd, amssymb, amsthm}
+% \usepackage{diagrams}
+\usepackage{color}
+\usepackage{graphicx, psfrag, tikz}
+\usepackage[all]{xy}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{enumitem,kantlipsum}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc,patterns,angles,quotes}
+%\renewcommand{\baselinestretch}{1.17}
+\usepackage{chemformula}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma} 
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\begin{document}
+\begin{center}
+\textbf{Math 309 Homework 8}\\
+(5 problems)
+\end{center}
+
+
+
+\begin{enumerate}[leftmargin=*]
+\item Consider the conduction of heat in a rod of length $\pi$ cm.  It's ends are insulated for all $t>0$, i.e. the temperature distribution $u(x,t)$ satisfies the boundary conditions $\frac{\partial u}{\partial x}(0, t)=\frac{\partial u}{\partial x}(\pi, t)=0$.  Suppose that $\alpha^2=1$.   Find an expression for the $u(x,t)$ if the initial temperature distribution in the rod is $u(x,0)=\sin^2x$.  \\
+\emph{Hint: the identity $\sin^2x=\frac{1}{2}(1-\cos (2x))$ may come in handy towards the very end. } \\
+
+
+\item Consider the conduction of heat in a rod 40cm in length whose ends are maintained at $0^{\circ}$C for all $t>0$.  Suppose that $\alpha^2=3$.  Find an expression for the temperature $u(x,t)$ if the initial temperature distribution in the rod is 
+\[
+u(x,0)=\left\{ \begin{array}{ll}
+x, &  0\leq x< 20\\
+40-x, & 20\leq x\leq 40
+\end{array}\right. 
+\] 
+
+\item Consider the conduction of heat in a rod of length $\pi$ cm and whose ends are maintained at temperatures $u(0,t)=0$ and $u(\pi, t)=-\pi^2$.  Suppose that $\alpha^2=1$.   Find an expression for the $u(x,t)$ if the initial temperature distribution in the rod is $u(x,0)=-x^2$.  \\
+
+
+\item The motion of a circular elastic membrane, such as a drumhead, is governed by the two dimensional wave equation for $u(r,\theta, t)$ in polar coordinates
+\[
+ \frac{\partial ^2 u}{\partial r^2} + \frac{1}{r}\frac{\partial u}{\partial r} + \frac{1}{r^2} \frac{\partial ^2 u}{\partial \theta^2} = \frac{1}{a^2}  \frac{\partial ^2 u}{\partial t^2}.
+ \]
+ Assuming that $u(r, \theta, t) = R(r)\Theta(\theta) T(t)$, find ordinary differential equations satisfied by
+$R(r), \Theta(\theta)$, and $T(t).$\\
+
+\item (Root cellars, continuation of HW7 \#1)  If you don't want to read the whole set-up, you can just read the first two paragraphs (i.e. till the end of page 1 of this pdf file) and the general solution for $u(x,t)$ (i.e. top of page 3).  That's all you need in order to work on  the questions listed at the end.  
+
+We are interested in the ground temperature $u(x,t)$ at time $t$ and depth $x$, i.e. $x$ is the vertical position that is 0 on the surface and positive going underground.   The temperature on the surface, $u(0,t)=f(t)$, is a periodic function with period equals to 1 year.  For convenience, let us use a unit of time such that 1 year is equal to $2\pi$ time units, so $f(t)$ is $2\pi$-periodic.\\
+
+We consider the scenario where the temperature at depth $x$ is only affected by the heat conducted from above ground (e.g. by only considering small $x$, so we don't go deep into the Earth to experience any of its internal heat).  Then at each fixed depth $x$, $u(x,t)$ should also be some $2\pi$-periodic function of $t$ since it is only affected by heat coming from above ground.  , so we can write it as a Fourier series, i.e.
+\[
+u(x,t)=a_{0}(x)+\sum_{n=1}^{\infty}\left[ a_{n}(x)\cos(nt)+b_{n}(x)\sin(nt) \right].
+\] 
+(Note for each fixed $x$, the Fourier coefficients $a_n(x)$ and $b_n(x)$ are constants.  As $x$ changes, $u(x,t)$ becomes different functions of $t$, so the coefficients changes with $x$.)  From what we learned about the Fourier series,
+\[
+a_n=\frac{1}{\pi}\int_{-\pi}^\pi u(x,t)\cos (nt)dt, \quad \text{and}\quad b_n=\frac{1}{\pi}\int_{-\pi}^\pi u(x,t)\sin (nt)dt.\]
+
+
+Now this temperature $u(x,t)$ is governed by the heat equation
+\[
+\frac{\partial u}{\partial t}=\frac{\partial^2 u}{\partial x^2}
+\]
+(here for simplicity we took the constant in the heat equation to be $\alpha^2=1$).   \\
+
+By differentiating under the integral sign and using the heat equation, we get that 
+\begin{eqnarray*}
+	a_{n}''(x)
+	&=& \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{\partial^{2}u}{\partial x^{2}}(x,t)\,\cos(nt)\,dt\\
+	&=& \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{\partial u}{\partial t}(x,t)\,\cos(nt)\,dt\\
+	&=& \frac{n}{\pi}\int_{-\pi}^{\pi}u(x,t)\sin(nt)\,dt\\
+	&=& \begin{cases}
+	n\,b_{n}(x), & \text{ if } n\geq 1\\
+	0, &\text { if } n=0 \ \  (\text{so that } a_0=\alpha x+\beta).
+	\end{cases}
+\end{eqnarray*}
+A similar calculation shows that 
+\[
+b''_n(x)=-na_n.
+\]
+Hence we have the following system of ordinary differential equations
+\[
+\begin{cases}
+a_n''=nb_n\\
+b_n''=-na_n.
+\end{cases}
+\]
+Note that, except for the notation difference, this is exactly the system we solved in HW7 \#1, and there we found the general solution to be 
+\begin{eqnarray*}
+	a_{n}(x)&=& e^{\sqrt{\frac{n}{2}}\,x}\left[\alpha_{n}\cos(\sqrt{\tfrac{n}{2}}\,x)+\beta_{n}\sin(\sqrt{\tfrac{n}{2}}\,x)\right]
+	+e^{-\sqrt{\frac{n}{2}}\,x}\left[\gamma_{n}\cos(\sqrt{\tfrac{n}{2}}\,x)+\delta_{n}\sin(\sqrt{\tfrac{n}{2}}\,x)\right]\\
+	b_{n}(x)&=&e^{\sqrt{\frac{n}{2}}\,x}\left[-\alpha_{n}\sin(\sqrt{\tfrac{n}{2}}\,x)+\beta_{n}\cos(\sqrt{\tfrac{n}{2}}\,x))\right]
+	+e^{-\sqrt{\frac{n}{2}}\,x}\left[\gamma_{n}\sin(\sqrt{\tfrac{n}{2}}\,x)-\delta_{n}\cos(\sqrt{\tfrac{n}{2}}\,x)\right],
+\end{eqnarray*}
+where $\alpha_n, \beta_n, \gamma_n, \delta_n$ are arbitrary constants.\\
+
+Recall that we are only considering the scenario where the temperature at depth $x$ is only affected by the heat conducted from above ground, so we can assume that $|u(t,x)|$ is always less than the maximum temperature on the surface, which implies that $\alpha_{n}=\beta_{n}=0$ for all $n$ and that $a_{0}(x)=\gamma_{0}$ is constant (that is, the average temperature is constant). Thus the Fourier series of $u(x,t)$ is:
+\begin{align*}
+	u(x,t)
+	&=\gamma_{0}+\sum_{n=1}^{\infty}\gamma_{n}e^{-\sqrt{\frac{n}{2}}\,x}\left[\cos(\sqrt{\tfrac{n}{2}}\,x)\cos(nt)+\sin(\sqrt{\tfrac{n}{2}}\,x)\sin(nt)\right]\\
+	&\qquad\qquad\qquad\qquad+\sum_{n=1}^{\infty}\delta_{n}e^{-\sqrt{\frac{n}{2}}\,x}\left[-\cos(\sqrt{\tfrac{n}{2}}\,x)\sin(nt)+\sin(\sqrt{\tfrac{n}{2}}\,x)\cos(nt)\right]\\
+	&=\gamma_{0}+\sum_{n=1}^{\infty}e^{-\sqrt{\frac{n}{2}}\,x}\left[\gamma_{n}\cos\left(nt+\sqrt{\tfrac{n}{2}}\,x\right)+\delta_{n}\sin\left(nt+\sqrt{\tfrac{n}{2}}\,x\right)\right].
+\end{align*}
+We see that the $\gamma_{n}$ and $\delta_{n}$ are the Fourier coefficients of the surface ($x=0$) temperature function $f(t)$.  The above solution shows that going deeper underground has an exponential damping effect, and in addition to that, there is also a phase shift!
+
+\begin{itemize}
+\item [(a)] Suppose $u(0,t)=f(t)=\cos t$.  At depth $x=0$, what is the hottest (summer) time  $t_0 \in [0,2\pi)$? What is the coldest (winter) time $t_1 \in [0, 2\pi)$?
+\item [(b)]  Find the particular solution $u(x,t)$ such that $u(0,t)=f(t)=\cos t$.  
+\item [(c)]  Use the solution you found in part (b), at a fixed depth $x$, what is the hottest time $t\in [0, 2\pi)$ at this depth?  What is the coldest time $t\in [0, 2\pi)$ at this depth?  You will see that as the depth changes, the hottest/coldest times don't exactly match with the summer/winter time you found in part (a); there is a phase shift. 
+\item [(d)]  If you are storing root vegetables in the root cellar, you would like to take advantage of this phase shift to have the temperature in the cellar be as cool as possible in the heat of the summer.  Using the solution you found in part (b) and your analysis in part (c), what is the smallest depth $x$ such that $u(x,t_0)$ is the coolest time at this depth, where $t_0$ is the summer time you found in part (a).  
+\end{itemize}
+
+\end{enumerate}
+
+
+
+\end{document}
