@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amscd, amssymb, amsthm}
+% \usepackage{diagrams}
+\usepackage{color}
+\usepackage{graphicx, psfrag, tikz}
+\usepackage[all]{xy}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{enumitem,kantlipsum}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc,patterns,angles,quotes}
+%\renewcommand{\baselinestretch}{1.17}
+\usepackage{chemformula}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma} 
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\begin{document}
+\begin{center}
+\textbf{Math 309 Homework 6}\\
+(6 problems)
+\end{center}
+
+
+
+\begin{enumerate}[leftmargin=*]
+
+\item (CO2, a continuation of HW2 P4) Recall in Homework 2, \#4, we set up the equation  for  the linear motion of the atoms in the carbon dioxide $\ch{CO2}$ molecule as 
+\[
+x''= Fx, \quad \text{where }
+F = \left[\begin{array}{ccc}
+-\frac{k}{M}& \frac{k}{M} &0\\\\
+\frac{k}{m}&-\frac{2k}{m}&\frac{k}{m} \\\\
+0&\frac{k}{M} &-\frac{k}{M}
+\end{array}\right],
+\]
+where $M$ is the mass of oxygen and $m$ is the mass of carbon. 
+
+ (Note that here we are only describing the type of motion where the  three atoms stay in a line at all times, so this is not a complete description because the three atoms can also move in ways in which they are not completely aligned all the time.  So we are describing a subset of the possible motions.  Also this description is off slightly, but only slightly, because we are not considering quantum mechanical effects.) 
+ 
+ In that homework, we also found the following 3 eigenvectors with their respective eigenvalues,
+\[
+\begin{cases}
+u= \left[\begin{array}{c}
+1\\
+1\\
+1
+\end{array}\right] \text{ with } \lambda_1=0,\\
+ v= \left[\begin{array}{c}
+1\\
+0\\
+-1
+\end{array}\right]\text{ with } \lambda_2=-\frac{k}{M}, \\
+w= \left[\begin{array}{c}
+1\\
+-\frac{2M}{m}\\
+1
+\end{array}\right] \text{ with } \lambda_3=-\frac{k}{M}-\frac{2k}{m}.
+\end{cases}
+\]
+\begin{itemize}
+\item[(a)] Imitate the example we did in Lectures 3 and 4 to find the general solution $x(t)$ to be above 2nd order system.  The lecture notes can be found on the course website, in particular:
+ \verb+http://faculty.washington.edu/heathml/309/03-04aIntro.pdf+
+ 
+ \item[(b)] No need to write anything for this part, but describe to yourself what each of the eigenmodes (i.e. the solutions along an eigenvector) means.  Convince yourself that one set of the solutions is describing a vibration where the two oxygen atoms move in the same direction by the same amount, while the carbon atom moves in the opposite direction, and the angular frequency of this vibration is given by $\omega_3=\sqrt{-\lambda_3}$.
+ 
+ \item[(c)] No need to write anything for this part either, but please read.  One can experimentally measure the wavelength of that vibration described above in part (b), which is about $\lambda=4.3\times 10^{-6}$ meters.  One notices that this is in the infrared region of the electromagnetic spectrum, which shows that \ch{CO2} is a greenhouse gas.  Given the wavelength $\lambda$, we can calculate the angular frequency to be $\omega_3=\frac{2\pi c}{\lambda}\approx 4.4\times 10^{14}$ rad/sec, where $c\approx 3\times 10^8$ meters/sec is the speed of light.
+ 
+ \item[(d)] Now, we can equate the $\omega_3$ from parts (b) and (c) to get $\sqrt{-\lambda_3}=\omega_3=4.4\times 10^{14}$.  From this relation, calculate $k$.  You may use the fact that $M$ and $m$ are related by $m=\frac{3}{4}M$, and the mass of oxygen is about $M=2.7\times 10^{-26}$kg.
+ 
+ \item[(e)] Write the above system of 2nd order equations as a system of 1st order equations.  No need to solve, just write down the equations.  Note that you will get a $6\times 6$ system.\\
+\end{itemize}
+
+\item (Continuation of HW1 \#5) Consider the system $x'=Ax$, where $A$ is the matrix from HW1, \#5,
+\[
+A= \left[\begin{array}{ccc}
+1&-1&1\\
+0&3&0\\
+0&0&3
+\end{array}\right].
+\]
+This matrix is diagonalizable, or equivalently that means you can find 3 linearly independent eigenvectors.  There are two eigenvalues $\lambda_1=1$ and $\lambda_2=3$.  One eigenvector is $\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right]$ with eigenvalue $\lambda_1=1$.  The space of eigenvectors with eigenvalue $\lambda_2=3$ is two dimensional, which you found already in Homework 1, \#5 (check the homework solutions to make sure you have the correct ones).  Write down the general solution to the system $x'=Ax$.  Note that there's no work to show for this problem, you can just simply write down the answer.\\
+
+
+
+
+
+\item Consider the vector space $L^2([0,1])$, with an inner product on this space given by $\langle f, g\rangle=\int_0^1f(x)g(x)dx$.   Determine the constants $a,b,c$ such that the functions 
+\[f_0(x)=1,\ \ \  f_1(x)=x+a, \ \ \ f_2(x)=x^2+bx+c\]
+form an orthogonal set.\\
+
+\item (Parseval's identity) Assuming that 
+\[
+f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\frac{n\pi x}{L}+b_n\sin\frac{n\pi x}{L}\right).
+\] Compute 
+$\frac{1}{L}\int_{-L}^{L} (f(x))^2 dx$ to show that it is equal to $\frac{a_0^2}{2}+\sum_{n=1}^\infty (a_n^2+b_n^2)$.\\ 
+
+\item In class (example 4) we computed Fourier series of the $2L$-periodic function $f(x)=x$ on $[-L, L]$.  
+\begin{itemize}
+\item[(a)] Write down the Fourier series of the $2\pi$-periodic function $f(x)=x$ on $[-\pi, \pi]$.  (Note: you can use the above result we obtained in class, so no need to show work for this part, just write down the answer.)\\
+\item[(b)]  Apply Parseval's identity to show that 
+\[\frac{\pi^2}{6}=\sum_{n=1}^\infty \frac{1}{n^2}.\]
+(Side remark: the function defined by $\zeta(s)=\sum_{n=1}^\infty \frac{1}{n^s}$ is known as the Riemann zeta function.  So the above sum is $\zeta(2)$.)
+
+\emph{Hint: first use Parseval's identity to compute $\frac{1}{\pi}\int_{-\pi}^{\pi}x^2dx.$}\\
+\end{itemize}
+
+\item 
+\begin{itemize}
+\item[(a)] Sketch the graph of the function below for three periods
+\[
+f(x)=\left\{ \begin{array}{ll}
+x, & \ -\pi\leq x < 0\\
+0, & \ 0< x<\pi
+\end{array}\right.;
+\ \ \ f(x+2\pi)=f(x).
+\]
+\item[(b)] Find the Fourier series for the above function and sketch the function that the Fourier series converges to.  
+
+\item[(c)] Use a graphing tool, such as desmos (\verb+https://https://www.desmos.com/+) to plot the first 5 partial sums of the Fourier series that you computed in part (a).  Please show 5 different plots. 
+
+\end{itemize}
+
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
