@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage{phaistos}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\usepackage{amssymb}
+\usepackage{geometry}\geometry{margin=1in}
+\usepackage[all]{xy}
+\newcommand{\tlap}[1]{\vbox to 0pt{\vss\hbox{#1}}}
+\newcommand{\blap}[1]{\vbox to 0pt{\hbox{#1}\vss}}
+
+
+\DeclareMathOperator{\Frob}{Frob}
+
+\numberwithin{equation}{section}
+
+\renewcommand{\baselinestretch}{1.35}
+
+\begin{document}
+\begin{center}
+\textbf{Quick summary of mechanical vibrations}
+\end{center}
+
+\noindent \textbf{Warning: }   Please refer to the lecture notes and the textbook, $\S$3.7-$\S$3.8, for more information.  In addition, please do NOT memorize any of the formulas here!  Most formulas here are obtained by solving simple differential equations.  It won't look as complicated when you are given actually numbers for the constants.   Solving the differential equation might actually results in less mistakes being made than trying to copy down a complicated formula and try to plug numbers into it.  
+
+
+\noindent \textbf{1. Undamped free vibration: }  $m\frac{d^2u}{dt^2}+ku=0$\\
+\indent - General solution:
+\[u(t)=c_1\cos \omega_0 t+c_2\sin\omega_0 t=A\cos (\omega_0 t-\delta)= A\cos\delta\cos \omega_0 t+A\sin\delta \sin \omega_0 t \]
+\indent - Natural frequency:\ \ \ \ \   $\omega_0=\sqrt {\frac{k}{m}}$\\
+\indent - Period: \ \ \ \ \  $T_0=\frac{2\pi}{\omega_0}= 2\pi\sqrt{\frac{m}{k}}$\\
+\indent - Amplitude: \ \ \  \ \ $A=\sqrt {c_1^2+c_2^2}$\\
+\indent - Phase shift:  \ \ \ \ \  $\tan\delta =\frac{c_2}{c_1}$ (because $\cos \delta = \frac{c_1}{A}$,\  $\sin \delta = \frac{c_2}{A}$)  \\
+\indent \hspace{1.2in} 
+$\Rightarrow \delta=
+\begin{cases}
+\text{If }c_1>0, \ \delta = \arctan(c_2/c_1)\in (-\pi/2,\pi/2), \\
+\text{If } c_1<0, \ \delta= \arctan(c_2/c_1)+\pi, \\
+\text{If } c_1=0, \ \delta= \begin{cases} \frac{\pi}{2} \text{ if } c_2>0 \\
+-\frac{\pi}{2} \text{ if } c_2 <0.
+\end{cases}
+
+\end{cases}$.\\
+\indent \hspace{1.2in} 
+Also useful to plot $(c_1,  c_2)$ since $(A, \delta)$ is just the polar coordinate.\\
+\indent - When given initial conditions, find $c_1, c_2$ and then determine $A, \delta$ from $c_1, c_2$.  It's not easy to\\
+\indent \ \  find $A, \delta$ directly from the initial conditions by plugging in $u=Acos(\omega_0t -\delta)$ (try it, you'll \\
+\indent \ \ see).  \\
+\indent - Graph the solution, make sure to get the correct sign for $u(0)$, get the correct first peak, the \\
+\indent \ \ amplitude, and the period.\\
+%\indent - When $x'(0)=0$, what is the phase angle? \ \ \ \ \ $\delta=0$\\
+%\indent - When $x'(0)=0$, what is $x(0)$?  \ \ \ \ \ $x(0)=A$.\\\\
+
+\noindent \textbf{2. Damped free vibration: } $m\frac{d^2u}{dt^2}+\gamma\frac{du}{dt}+ku=0$, \ \ \ \ \ \ \ 
+$r_{1,2}=-\frac{\gamma}{2m}\pm \sqrt{\left(\frac{\gamma}{2m}\right)^2-\frac{k}{m}}$.\\
+\indent \hspace{2in} Always decays exponentially.  \\
+
+\noindent \textbf{[a]} \textbf{Underdamping: } $\left(\frac{\gamma}{2m}\right)^2-\frac{k}{m}<0$\\
+\indent - General solution:
+\[u(t)=e^{-\gamma t/2m}(c_1\cos\mu t+c_2\sin\mu t)=Ae^{-\gamma t/2m}\cos(\mu t-\delta)\]
+\indent - Quasi-frequency:\ \ \ \ \ $\mu=\sqrt{\omega_0^2-\left(\frac{\gamma}{2m}\right)^2}<\omega_0$\\
+\indent - Quasi-period: \ \ \ \ \ \ $T=\frac{2\pi}{\mu}>T_0=\frac{2\pi}{\omega_0}$.\\
+\indent - Amplitude envelope: \ \ \ \ \ \ \ $\pm Ae^{-\gamma t/2m}$\\
+\indent - Graph the solution: make sure to get the correct sign for $u(0)$, graph the amplitude envelope,\\
+\indent \ \  get the correct time that it first touches the amplitude envelope and the period. \\
+\indent - As $\frac{\gamma}{2m} \nearrow \omega_0$, we have $\mu\searrow 0$ and $T\nearrow\infty$ \\
+%\indent \ \ Check that $\frac{c^2}{4mk}$ is dimensionless.  Verbally describe what it means for $\frac{c^2}{4mk}<<1$. \\
+
+
+\noindent \textbf{[b]} \textbf{Critical damping: } $\left(\frac{\gamma}{2m}\right)^2-\frac{k}{m}=0$ \\
+\indent - General solution: \[u(t)=e^{(-\gamma/2m)t}(c_1+c_2t)\]
+
+\noindent \textbf{[c]} \textbf{Overdamping: } $\left(\frac{\gamma}{2m}\right)^2-\frac{k}{m}>0$ \\
+\indent - General solution: \[u(t)=e^{-\gamma t/2m}\left(c_1e^{t\sqrt{\left(\frac{\gamma}{2m}\right)^2-\frac{k}{m}}}+c_2e^{-t\sqrt{\left(\frac{\gamma}{2m}\right)^2-\frac{k}{m}}}\right)\]\\
+
+\noindent \textbf{3. Periodically forced vibrations without damping: }\\
+\indent \hspace{2in} $m\frac{d^2u}{dt^2}+ku=F_0\cos \omega t $ (the process is similar for $F_0\sin \omega t$)\\
+\noindent \textbf{[a] driving freq. $\omega$ $\neq$ natural freq. $\omega_0=\sqrt{k/m}$} \\
+\indent - General solution: 
+\[u(t)=c_1\cos \omega_0 t+c_2\sin\omega_0 t+\frac{F_0}{m(\omega_0^2-\omega^2)}\cos \omega t.\]
+\indent \ \ Equivalently
+\[u(t)=C\cos (\omega_0 t-\delta)+\frac{F_0}{m(\omega_0^2-\omega^2)}\cos \omega t.\]
+\indent - Beats: \\ 
+\indent \ \ \ An example: suppose $u(0)=0$, $u'(0)=0$, then 
+$c_1=-\frac{F_0}{m(\omega_0^2-\omega^2)}, c_2=0$,
+\[u(t)=\frac{F_0}{m(\omega_0^2-\omega^2)}(\cos \omega t-\cos \omega_0 t)=\frac{2F_0}{m(\omega_0^2-\omega^2)}\sin\frac{(\omega _0-\omega) t}{2}\sin\frac{(\omega_0+\omega)t}{2}.\]
+\indent \ \ \  Since $\left |\frac{(\omega _0-\omega) t}{2}\right |<\frac{(\omega_0+\omega)t}{2}$, can treat $\left|\frac{2F_0}{m(\omega^2-\omega_0^2)}\sin\frac{(\omega -\omega_0) t}{2}\right|$ as amplitude and graph the\\
+\indent \ \ \ above solution.\\
+
+\noindent \textbf{[b] Resonance: driving freq. $\omega$ = natural freq. $\omega_0$}\\
+\indent - General solution: $u(t)=c_1\cos \omega_0 t+c_2\sin \omega_0 t+\frac{F_0}{2m\omega_0}t\sin \omega_0 t$.\\
+\indent - The particular solution $\frac{F_0}{2m\omega_0}t\sin \omega_0 t$ dominates when $t$ is large.\\
+\indent - Graph the particular solution\\
+
+\noindent \textbf{4. Periodically forced vibrations with damping: } $m\frac{d^2u}{dt^2}+\gamma\frac{du}{dt}+ku=F_0\cos \omega t$. \\
+\indent - General solution:
+\[u(t)=c_1u_1(t)+c_2u_2(t)+u_p(t)\]
+\indent \ \ Homogeneous part $c_1u_1(t)+c_2u_2(t)$ decays, i.e. they are the "transient solutions".\\
+\indent - The particular solution is called the steady state solution in this setting.  It is 
+ \[u_p(t)=C\cos \omega t+D\sin \omega  t=A\cos(\omega t-\delta),\]
+\indent \ \ just a oscillation with constant amplitude  
+\[ A=\frac{F_0}{\sqrt{m^2(\omega_0^2-\omega^2)^2+(\gamma\omega)^2}},\] 
+\indent \ \ which is nonzero if $\gamma\neq 0$.
+%\indent - Phase angle?  $\cos \delta=\frac{m(\frac{k}{m}-\omega_0^2)}{\sqrt{m^2(\frac{k}{m}-\omega_0^2)^2+c^2\omega_0^2}}$, $\sin\delta=\frac{c\omega_0}{\sqrt{m^2(\frac{k}{m}-\omega_0^2)^2+c^2\omega_0^2}}$, $\tan \delta=\frac{c\omega_0}{m(\frac{k}{m}-\omega_0^2)}$\\
+As $\omega\to 0$, $A\to \frac{F_0}{k}$; as $\omega\to \infty$, $A\to 0$.  Resonance\\
+\indent \ \  happens at the maximum of $A(\omega)$, which is when $\omega= \sqrt{\omega_0^2-\frac{\gamma^2}{2m^2}}$, if $\sqrt{\omega_0^2-\frac{\gamma^2}{2m^2}}$ is actually\\
+\indent \ \  a real number, i.e. if $\omega_0^2-\frac{\gamma^2}{2m^2}\geq 0$.\\ 
+
+\end{document}
